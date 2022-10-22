@@ -1,0 +1,76 @@
+<div class="container-fluid">
+  <!-- menu -->
+  <mat-card class="bg-primary">
+    <div class="d-flex justify-content-between">
+      <div class="left">
+        <div class="d-flex">
+          <mat-icon class="mat-18 text-white">menu</mat-icon>
+          <h3 class="text-white"><strong>Energyviss/Live Dashboard</strong></h3>
+        </div>
+      </div>
+      <div class="right">
+        <div class="d-flex">
+          <mat-icon class="mat-18 text-white">refresh</mat-icon>
+          <mat-icon class="mat-18 text-white">alarm</mat-icon>
+          <mat-icon class="mat-18 text-white">person</mat-icon>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+  <!-- card-no-2 -->
+  <mat-card>
+    <div class="d-flex justify-content-between">
+      <div class="one-block">
+        <div class="d-flex">
+          <p>Floor</p>
+          <mat-form-field appearance="fill">
+            <mat-select placeholder="Select">
+              <mat-option>1</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="one-block">
+        <div class="d-flex">
+          <p>Section</p>
+          <mat-form-field appearance="fill">
+            <mat-select placeholder="Select">
+              <mat-option>Lab-1</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="one-block">
+        <div class="d-flex">
+          <p>View</p>
+          <mat-form-field appearance="fill">
+            <mat-select placeholder="Select">
+              <mat-option>Individual</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="one-block">
+        <div class="d-flex">
+          <p>Meter</p>
+          <mat-form-field appearance="fill">
+            <mat-select placeholder="Select" (selectionChange)="meterChange()" [(value)]="selectedMeter">
+              <mat-option [value]="1">Meter-1</mat-option>
+              <mat-option [value]="2">Meter-2</mat-option>
+              <mat-option [value]="3">Meter-3</mat-option>
+              <mat-option [value]="4">Meter-4</mat-option>
+              <mat-option [value]="5">Meter-5</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+  <!-- card-3 the meter-card -->
+  <mat-card class="d-flex justify-content-between">
+    <div class="meter" *ngFor="let meter of meters">
+      <mat-spinner [diameter]="40"></mat-spinner>
+      <p class="text-muted"><strong>{{value}}</strong></p>
+    </div>
+  </mat-card>
+</div>

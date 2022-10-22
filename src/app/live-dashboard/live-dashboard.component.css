@@ -1,0 +1,37 @@
+.container-fluid {
+  padding: 0em 2em;
+}
+
+mat-card {
+  margin: 2em;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.bg-primary {
+  background-color: blue;
+}
+
+.text-white {
+  color: white;
+  margin-right: 10px;
+}
+
+.one-block .d-flex p {
+  margin-top: 25px;
+  margin-right: 10px;
+}
+
+.meter {
+  padding: 2em;
+}
+
+.meter p {
+  margin: 5px;
+}

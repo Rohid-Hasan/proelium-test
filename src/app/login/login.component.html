@@ -1,0 +1,25 @@
+<div class="container-fluid">
+  <div class="row">
+    <h1 class="text-center display-1">
+      NOKIA
+    </h1>
+    <h1 class="display-4">FACILIVIS</h1>
+    <form [formGroup]="loginForm" (submit)="onSubmit()">
+      <mat-form-field appearance="outline" class="w-50">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput formControlName="email" placeholder="JohnDoe@gmail.com">
+        <mat-error>Please Enter Valid Email</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="w-50 my-2">
+        <mat-label>Enter your password</mat-label>
+        <input formControlName="password" matInput [type]="hide ? 'password' : 'text'" />
+        <mat-error>Password must be 6 characters long</mat-error>
+        <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide">
+          <mat-icon class="black-icon">{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+      </mat-form-field>
+      <button mat-flat-button color="primary" class="w-50" [disabled]="loginForm.invalid">Login</button>
+    </form>
+  </div>
+</div>
